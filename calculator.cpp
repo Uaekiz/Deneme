@@ -15,7 +15,9 @@ int main()
 {
 	setlocale(LC_ALL, "Turkish"); 
 	double a, b, c, radyan;
-	cout << "Hoşgeldiniz! Lütfen işleminizi seçiniz(+,-,*,/,^,^/,PI,Q): ";
+	cout << "Hoşgeldiniz!";
+        basaal:
+        cout<<"Lütfen işleminizi seçiniz(+,-,*,/,^,^/,PI,Q): ";
 	string işlem;
 	cin >> işlem;
 	while (true)
@@ -127,6 +129,24 @@ int main()
 			}
 		}
 	}
-        
-	return 0;
+
+        cout << "Devam etmek istermisiniz(e/h)? ";
+        char x;
+        cin >> x;
+        while (true)
+        {
+	                if (x != 'h' && x != 'H' && x != 'e' && x != 'E')
+	                {
+		        cout << "Yanlış karakter girişi! Lütfen tekrar deneyiniz ";
+		        cin >> x;
+	                }
+	                else if (x == 'h' || x == 'H')
+	                {
+		        cout << "Çıkış yapılıyor...";
+		        return 0;
+	                }
+	                else
+		        goto basaal;
+                        }
+	
 }
