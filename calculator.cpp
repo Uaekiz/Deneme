@@ -15,7 +15,7 @@ int main()
 {
 	setlocale(LC_ALL, "Turkish"); 
 	double a, b, c, radyan;
-	cout << "Hoşgelnizi! Lütfen işleminizi seçiniz(+,-,*,/,^,^/,PI,Q): ";
+	cout << "Hoşgeldiniz! Lütfen işleminizi seçiniz(+,-,*,/,^,^/,PI,Q): ";
 	string işlem;
 	cin >> işlem;
 	while (true)
@@ -34,7 +34,7 @@ int main()
 	{
 		cout << "İlk sayınızı giriniz: ";
 		cin >> a;
-		cout << "İkinci sayıyı giriniz ";
+		cout << "İkinci sayıyı giriniz: ";
 		cin >> b;
 		sonuçlar(a + b);
 	}
@@ -42,7 +42,7 @@ int main()
 	{
 		cout << "İlk sayınızı giriniz: ";
 		cin >> a;
-		cout << "İkinci sayıyı giriniz ";
+		cout << "İkinci sayıyı giriniz: ";
 		cin >> b;
 		sonuçlar(a - b);
 	}
@@ -50,7 +50,7 @@ int main()
 	{
 		cout << "İlk sayınızı giriniz: ";
 		cin >> a;
-		cout << "İkinci sayıyı giriniz ";
+		cout << "İkinci sayıyı giriniz: ";
 		cin >> b;
 		sonuçlar(a * b);
 	}
@@ -58,7 +58,7 @@ int main()
 	{
 		cout << "İlk sayınızı giriniz: ";
 		cin >> a;
-		cout << "İkinci sayıyı giriniz ";
+		cout << "İkinci sayıyı giriniz: ";
 		cin >> b;
 		sonuçlar(a / b);
 	}
@@ -66,7 +66,7 @@ int main()
 	{
 		cout << "İlk sayınızı giriniz: ";
 		cin >> a;
-		cout << "İkinci sayıyı giriniz ";
+		cout << "İkinci sayıyı giriniz: ";
 		cin >> b;
 		sonuçlar(pow(a,b));
 	}
@@ -77,7 +77,7 @@ int main()
 		cin >> a;
 		cout << "İkinci sayıyı giriniz ";
 		cin >> b;
-		cout << "Üçüncü sayıyı da giriniz ";
+		cout << "Üçüncü sayıyı da giriniz: ";
 		cin >> c;
 		sonuçlar(pow(a,b/c));
 	}
@@ -127,5 +127,6 @@ int main()
 			}
 		}
 	}
+        
 	return 0;
 }
