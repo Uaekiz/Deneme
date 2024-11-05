@@ -135,7 +135,7 @@ int main()
 		}
 		if (açı == "tan")
 		{
-			if (a == 90 || a == 270 || a == -90 || a == -270)
+			if ((a-90)/180 == static_cast<int>((a-90)/180))
 			{
 				cout << "Tanımsız..."<<endl;
 			}
