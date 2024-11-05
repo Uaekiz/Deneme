@@ -15,17 +15,17 @@ int main()
 {
 	setlocale(LC_ALL, "Turkish"); 
 	double a, b, c, radyan;
-	cout << "Hoşgeldiniz!";
+	cout << "Hoşgeldiniz! ";
         basaal:
         cout<<"Lütfen işleminizi seçiniz(+,-,*,/,^,^/,PI,Q): ";
 	string işlem;
-	cin >> işlem;
+	getline(cin,işlem);
 	while (true)
 	{
 		if (işlem != "+" && işlem != "-" && işlem != "*" && işlem != "/" && işlem != "^" && işlem != "^/" && işlem != "PI" && işlem != "Q" && işlem != "q" && işlem != "pi")
 		{
 			cout << "Yanlış karakter girişi! Lütfen tekrar deneyiniz ";
-			cin >> işlem;
+			getline(cin,işlem);
 		}
 		else
 		{
@@ -155,17 +155,18 @@ int main()
 		}
 	}
 
-        cout << "Devam etmek istermisiniz(e/h)? ";
-        char x;
-        cin >> x;
+        string x;
+        cin.clear(); 
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         while (true)
         {
-	                if (x != 'h' && x != 'H' && x != 'e' && x != 'E')
+                        cout << "Devam etmek istermisiniz(e/h)? ";
+                        getline(cin,x);
+	                if (x.length() != 1 || (x[0] != 'h' && x[0] != 'H' && x[0] != 'e' && x[0] != 'E'))
 	                {
 		        cout << "Yanlış karakter girişi! Lütfen tekrar deneyiniz ";
-		        cin >> x;
 	                }
-	                else if (x == 'h' || x == 'H')
+	                else if (x[0] == 'h' || x[0] == 'H')
 	                {
 		        cout << "Çıkış yapılıyor..."<<endl;
 		        return 0;
