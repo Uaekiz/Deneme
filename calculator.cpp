@@ -22,7 +22,7 @@ int main()
 	cin >> işlem;
 	while (true)
 	{
-		if (işlem != "+" && işlem != "-" && işlem != "*" && işlem != "/" && işlem != "^" && işlem != "^/" && işlem != "PI" && işlem != "Q")
+		if (işlem != "+" && işlem != "-" && işlem != "*" && işlem != "/" && işlem != "^" && işlem != "^/" && işlem != "PI" && işlem != "Q" && işlem != "q" && işlem != "pi")
 		{
 			cout << "Yanlış karakter girişi! Lütfen tekrar deneyiniz ";
 			cin >> işlem;
@@ -83,13 +83,13 @@ int main()
 		cin >> c;
 		sonuçlar(pow(a,b/c));
 	}
-	if (işlem == "PI")
+	if (işlem == "PI" || işlem == "pi")
 	{
 		cout << "Lütfen yarıçapını giriniz: ";
 		cin >> a;
 		sonuçlar(2 * M_PI * a);
 	}
-	if (işlem == "Q")
+	if (işlem == "Q" || işlem == "q")
 	{
 		cout << "Lütfen açıyı giriniz: ";
 		cin >> a;
@@ -110,23 +110,48 @@ int main()
 			}
 		}
 		if (açı == "cos")
-		{			
+		{	
+                        double result = cos(radyan);
+                        if(abs(result) < 1e-9)
+                        {
+                           sonuçlar(0);
+                        }
+                        else
+                        {		
 			sonuçlar(cos(radyan));
+                        }
 		}
 		if (açı == "sin")
 		{
-			sonuçlar(sin(radyan));
+			double result = sin(radyan);
+                        if(abs(result) < 1e-9)
+                        {
+                           sonuçlar(0);
+                        }
+                        else
+                        {
+                        sonuçlar(sin(radyan));
+                        }
 		}
 		if (açı == "tan")
 		{
 			if (a == 90 || a == 270 || a == -90 || a == -270)
 			{
-				cout << "Tanımsız";
+				cout << "Tanımsız..."<<endl;
 			}
-			else
-			{
-				sonuçlar(tan(radyan));
-			}
+
+                        else 
+                        {
+                                double result = tan(radyan);
+                                if(abs(result) < 1e-9)
+                                {
+                                    sonuçlar(0);
+                                }
+                                else
+                                {
+                                    sonuçlar(tan(radyan));
+                                }
+                        }
 		}
 	}
 
@@ -142,11 +167,10 @@ int main()
 	                }
 	                else if (x == 'h' || x == 'H')
 	                {
-		        cout << "Çıkış yapılıyor...";
+		        cout << "Çıkış yapılıyor..."<<endl;
 		        return 0;
 	                }
 	                else
 		        goto basaal;
                         }
-	
 }
