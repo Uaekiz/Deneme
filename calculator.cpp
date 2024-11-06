@@ -158,9 +158,9 @@ int main()
         string x;
         cin.clear(); 
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Devam etmek istermisiniz(e/h)? ";
         while (true)
         {
-                        cout << "Devam etmek istermisiniz(e/h)? ";
                         getline(cin,x);
 	                if (x.length() != 1 || (x[0] != 'h' && x[0] != 'H' && x[0] != 'e' && x[0] != 'E'))
 	                {
